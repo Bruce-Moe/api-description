@@ -6128,6 +6128,7 @@ components:
         scope:
           type: string
       required:
+      - response_type
       - access_token
       - token_type
       - expires_in
@@ -6234,6 +6235,8 @@ components:
       properties:
         media_type:
           type: string
+      required:
+        - media_type
     PinMediaWithImage:
       title: image
       description: Pin with image.
@@ -6292,6 +6295,8 @@ components:
           image_base64: '#/components/schemas/PinMediaSourceImageBase64'
           image_url: '#/components/schemas/PinMediaSourceImageURL'
           video_id: '#/components/schemas/PinMediaSourceVideoID'
+      required:
+        - source_type
     PinMediaSourceImageBase64:
       title: Image Base64
       description: Base64-encoded image media source
