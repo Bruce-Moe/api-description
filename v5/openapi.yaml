@@ -6107,6 +6107,11 @@ components:
       title: OAuth access token response
       description: A successful OAuth access token response.
       type: object
+      discriminator:
+        propertyName: response_type
+        mapping:
+          authorization_code: '#/components/schemas/OauthAccessTokenResponseCode'
+          refresh_token: '#/components/schemas/OauthAccessTokenResponseRefresh'
       properties:
         response_type:
           type: string
@@ -6122,11 +6127,6 @@ components:
           type: integer
         scope:
           type: string
-      discriminator:
-        propertyName: response_type
-        mapping:
-          authorization_code: '#/components/schemas/OauthAccessTokenResponseCode'
-          refresh_token: '#/components/schemas/OauthAccessTokenResponseRefresh'
       required:
       - access_token
       - token_type
